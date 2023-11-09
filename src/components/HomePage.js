@@ -1,46 +1,41 @@
-// src/components/LandingPage.js
-import React, { useState, useEffect } from 'react';
-import RegistrationForm from './RegistrationForm';
+// src/components/HomePage.js
+import React from 'react';
 
-function LandingPage() {
-  const [registeredUsers, setRegisteredUsers] = useState([]);
-  const [showForm, setShowForm] = useState(false);
-
-  const handleRegister = (userData) => {
-    setRegisteredUsers([...registeredUsers, userData]);
-    setShowForm(false);
-  };
-
-  useEffect(() => {
-    setShowForm(true);
-  }, []);
-
+function HomePage() {
   return (
-    <div style={{ textAlign: 'center' }}>
-      <h1 style={{ color: 'blue' }}>IMARISHA UCHUMI PARTY (UIP)</h1>
-      <p style={{ color: 'blue' }}>Power Line On post</p>
-
-      {showForm ? (
-        <RegistrationForm onRegister={handleRegister} />
-      ) : (
-        <div>
-          <p>Thank you for registering!</p>
-          <button onClick={() => setShowForm(true)}>Register Again</button>
-        </div>
-      )}
-
-      {registeredUsers.length > 0 && (
-        <div>
-          <h2>Registered Users:</h2>
-          <ul>
-            {registeredUsers.map((user, index) => (
-              <li key={index}>{`${user.name} - ${user.idOrPassport}, ${user.phoneNumber}, ${user.email}`}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+    <div style={{ background: 'white', padding: '20px' }}>
+      <div style={{ textAlign: 'center' }}>
+        <img
+          src="/images/vision.png"
+          alt="Our Vision"
+          style={{ width: '100px', height: '100px' }}
+        />
+        <p style={{ color: 'navy', margin: '10px' }}>
+          Our Vision: Future-proof Kenya through creative leadership strategies to de-risk and optimize sustainable economy in Kenya's development agenda.
+        </p>
+      </div>
+      <div style={{ textAlign: 'center', marginTop: '20px' }}>
+        <img
+          src="/images/mission.png"
+          alt="Our Mission"
+          style={{ width: '100px', height: '100px' }}
+        />
+        <p style={{ color: 'navy', margin: '10px' }}>
+          Our Mission: To energize Kenyans, to inspire moments of patriotism, optimism and happiness in sustainable transformation of their country.
+        </p>
+      </div>
+      <div style={{ textAlign: 'center', marginTop: '20px' }}>
+        <img
+          src="/images/goal.png"
+          alt="Goal"
+          style={{ width: '100px', height: '100px' }}
+        />
+        <p style={{ color: 'navy', margin: '10px' }}>
+         Our Goal: Get Kenya Moving
+        </p>
+      </div>
     </div>
   );
 }
 
-export default LandingPage;
+export default HomePage;
