@@ -2,10 +2,8 @@
 import React from "react";
 function AboutUsPage() {
   return (
-    <div
-      style={{ backgroundColor: "#FFCC00", padding: "20px", fontSize: "36px" }}
-    >
-      <h1 style={{ color: "navy" }}>About Us</h1>
+    <div style={{ backgroundColor: '#FFCC00', padding: '20px' }}>
+      <h1 style={{ color: 'navy' }}>About Us</h1>
       {/* Your navigation bar here */}
       <h2 style={{ color: "navy" }}>Our Leadership</h2>
       <div
